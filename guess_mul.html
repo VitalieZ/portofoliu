@@ -1,0 +1,144 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Личный сайт студента GeekBrains</title>
+
+<link href="css/style.css" rel="stylesheet" type="text/css" />
+
+<script type="text/javascript">
+	function checkAnswers(){
+		var random_num = Math.floor(Math.random() * 100) + 1;
+		var countAnswer1 = 0;
+		var countAnswer2 = 0;
+
+			while(true){
+			var answer1 = prompt('Ходит игрок 1. Введи число от 1 до 100. Для выходы нажмите q');
+				if(answer1.toLowerCase()  == 'q'){
+					alert('Мне очень жаль вы не угадали, и покидаете игру. :-( ');
+					break;
+				}	
+					if( (answer1 >= 1) && (answer1 <= 100) ){
+						if(parseInt(answer1) == random_num){
+							alert("Вы угадали! Поздравляю!");
+							break;
+						}else{
+							if(parseInt(answer1) > random_num){
+								alert('Вы не угадали, Твоё число слишком большое! ');
+								countAnswer1++;
+								
+								var answer2 = prompt('Ходит игрок 1. Введи число от 1 до 100. Для выходы нажмите q');
+								
+								if(answer2.toLowerCase()  == 'q'){
+									alert('Мне очень жаль вы не угадали, и покидаете игру. :-( ');
+									break;
+								}	
+									if( (answer2 >= 1) && (answer2 <= 100) ){
+										if(parseInt(answer2) == random_num){
+											alert("Вы угадали! Поздравляю!");
+											break;
+										}else{
+											if(parseInt(answer2) > random_num){
+												alert('Вы не угадали, Твоё число слишком большое! ');
+												countAnswer2++;
+											}else{
+												alert('Вы не угадали, Твоё число слишком маленкое! ');
+												countAnswer2++;
+											}
+										}	
+									}else{
+										alert('Вы должны ввести число от 1 до 100.');
+									}
+							}else{
+								alert('Вы не угадали, Твоё число слишком маленкое! ');
+								countAnswer1++;
+								
+								var answer2 = prompt('Ходит игрок 2. Введи число от 1 до 100. Для выходы нажмите q');
+								
+								if(answer2.toLowerCase()  == 'q'){
+									alert('Мне очень жаль вы не угадали, и покидаете игру. :-( ');
+									break;
+								}	
+									if( (answer2 >= 1) && (answer2 <= 100) ){
+										if(parseInt(answer2) == random_num){
+											alert("Вы угадали! Поздравляю!");
+											break;
+										}else{
+											if(parseInt(answer2) > random_num){
+												alert('Вы не угадали, Твоё число слишком большое! ');
+												countAnswer2++;
+											}else{
+												alert('Вы не угадали, Твоё число слишком маленкое! ');
+												countAnswer2++;
+											}
+										}	
+									}else{
+										alert('Вы должны ввести число от 1 до 100.');
+									}
+							}
+						}	
+					}else{
+						alert('Вы должны ввести число от 1 до 100.');
+					}
+			}
+			
+			if(countAnswer1 == 0)
+				alert('Количество Попыток 1 полизывателя: 0');
+			else
+				alert('Количество Попыток 1 полизывателя: ' + countAnswer1);
+			
+			if(countAnswer2 == 0)
+				alert('Количество Попыток 2 полизывателя: 0');
+			else
+				alert('Количество Попыток 2 полизывателя: ' + countAnswer2);
+		
+	}
+
+
+</script>
+
+
+</head>
+<body>
+
+<div id="tooplate_body_wrapper" />
+<div id="tooplate_wrapper" />
+<div id="tooplate_header">
+	<div id="site_title">
+		<h1><a href="http://geekbrains.ru">GeekBrains</a></h1>
+	</div>
+	<div id="tooplate_menu">
+		<ul>
+			<li><a href="index.html">Главная</a></li>
+			<li><a href="puzzle.html">Загадки</a></li>
+			<li><a href="guess.html">Угадайка</a></li>
+			<li><a href="guess_mul.html">Угадайка мул</a></li>
+		</ul>    	
+	</div>
+</div>
+    
+<div id="content_box">
+		
+	<div id="content_title">
+		<h2>Угадайка мультиплеер</h2>
+	</div>
+	<div id="content">
+		
+		<p>Я загадал число от 1 до 100. Попробуй отгадай!<p/>
+		<p>Игра рассчитана на 2-х игроков.Игроки ходят по очереди. После каждой попытки ты узнаешь,<br /> правильный
+			ответ больше или меньше твоего ответа. Кто угадает раньше - тот выиграл!<br />
+		<p>
+		<p>Удачи тебе!</p>
+
+		<input type="button" value="Начать игру" onClick="checkAnswers()"/>
+
+	</div>
+           
+    <div id="tooplate_footer">    
+        Copyright © 2016 <a href="http://geekbrains.ru">GeekBrains</a>
+    </div>
+    
+</div> <!-- end of warpper -->
+
+</body>
+</html>
